@@ -489,7 +489,7 @@
     </div>
   </footer>
 
-  <!-- SCRIPT: COUPON CODE (50, 100, 150, 200, 400 & DYNAMIC QR LOGIC -->
+  <!-- SCRIPT: COUPON CODE ( & DYNAMIC QR LOGIC -->
   <script>
     lucide.createIcons();
 
@@ -559,12 +559,12 @@
       } else if (rawInput === '') {
         if (msg) {
           msg.className = 'text-[11px] mt-1.5 font-medium text-amber-400 block';
-          msg.innerText = 'Please enter a coupon code (50, 100, 150, 200, or 400).';
+          msg.innerText = 'Please enter a coupon code
         }
       } else {
         if (msg) {
           msg.className = 'text-[11px] mt-1.5 font-medium text-red-400 block';
-          msg.innerText = '✕ Invalid coupon. Try 50, 100, 150, 200, or 400.';
+        
         }
       }
     }
