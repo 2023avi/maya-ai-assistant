@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Maya Ai — Personal Android AI Assistant</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Plus Jakarta Sans', 'Hind Siliguri', sans-serif;
+      background-color: #0b0d10;
+      color: #9aa2b0;
+    }
+    .accent-bg {
+      background: linear-gradient(135deg, #e62e2d, #c91817);
+    }
+    .accent-bg:hover {
+      background: linear-gradient(135deg, #f53837, #db1d1c);
+    }
+    .card-dark {
+      background-color: #15181e;
+      border: 1px solid #202632;
+    }
+    .neon-border {
+      border: 1px solid rgba(230, 46, 45, 0.4);
+      box-shadow: 0 0 25px -5px rgba(230, 46, 45, 0.2);
+    }
+  </style>
+</head>
+<body class="selection:bg-red-600 selection:text-white">
+
+  <!-- TOP BANNER -->
+  <div class="bg-gradient-to-r from-amber-950/70 via-red-950/50 to-amber-950/70 border-b border-red-900/30 text-center py-2 px-3 text-xs font-semibold text-red-300 flex items-center justify-center gap-2">
+    <span>🪔 NAVRATRI SALE</span>
+    <span class="bg-red-600/30 border border-red-500/50 text-red-200 text-[10px] uppercase px-1.5 py-0.5 rounded font-bold">₹500 OFF</span>
+    <span class="opacity-80 text-[11px]">• Ends on Dussehra night, 20 October</span>
+    <a href="#pricing" class="underline hover:text-white font-bold ml-1">Claim offer →</a>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav class="border-b border-slate-800/60 bg-[#0b0d10]/95 backdrop-blur-md sticky top-0 z-50">
+    <div class="max-w-3xl mx-auto px-4 py-3 flex justify-between items-center">
+      <div class="flex items-center gap-2.5">
+        <div class="w-8 h-8 rounded-xl bg-gradient-to-tr from-amber-500 to-red-600 flex items-center justify-center text-white font-extrabold text-base shadow-md">
+          M
+        </div>
+        <span class="text-lg font-bold text-white tracking-tight">The <span class="text-red-500">Maya Ai</span></span>
+      </div>
+
+      <a href="#pricing" class="accent-bg text-white text-xs font-bold px-3.5 py-2 rounded-xl transition shadow">
+        Pay & Install
+      </a>
+    </div>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="max-w-2xl mx-auto px-4 pt-10 pb-6 text-center">
+    <h1 class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">
+      Maya Ai <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 to-red-500">for Android</span>
+    </h1>
+    <p class="mt-4 text-slate-300 text-sm md:text-base leading-relaxed">
+      Talk to it and your phone does the work — calls, WhatsApp, apps, your screen, your files. It writes code, researches, makes pictures and remembers you. English and Hindi, one licence, one phone.
+    </p>
+
+    <div class="mt-5 flex flex-wrap justify-center gap-2.5 text-xs text-slate-300">
+      <span class="card-dark px-3 py-1.5 rounded-full flex items-center gap-1.5 border border-slate-800">🛡️ Voice Guardian</span>
+      <span class="card-dark px-3 py-1.5 rounded-full flex items-center gap-1.5 border border-slate-800">🧠 Long-term memory</span>
+      <span class="card-dark px-3 py-1.5 rounded-full flex items-center gap-1.5 border border-slate-800">💻 Links to your PC</span>
+    </div>
+  </header>
+
+  <!-- MAIN PRICING & BUY CARD -->
+  <section id="pricing" class="max-w-xl mx-auto px-4 py-4">
+    <div class="card-dark rounded-2xl p-6 neon-border">
+      <div class="flex items-baseline gap-2">
+        <span class="text-4xl font-extrabold text-white">₹699</span>
+        <span class="text-slate-500 text-sm line-through">₹999</span>
+      </div>
+      <div class="text-amber-400 text-xs font-bold mt-1">ek baar · hamesha ke liye aapka</div>
+      <p class="text-xs text-slate-400 mt-2">
+        1 licence = 1 phone. Switching phones? Log the old one out from your dashboard.
+      </p>
+
+      <!-- COUPON CODE BOX (50, 100, 150, 200, 400) -->
+      <div class="mt-5 p-3.5 bg-[#0b0d10] border border-slate-800 rounded-xl">
+        <div class="flex justify-between items-center mb-1.5">
+          <label class="text-[11px] font-bold text-slate-300 flex items-center gap-1">
+            <i data-lucide="tag" class="w-3.5 h-3.5 text-red-400"></i> Have a Promo Code?
+          </label>
+        </div>
+        
+        <div class="flex flex-wrap gap-1.5 mb-2.5 text-[10px]">
+          <span onclick="setCoupon('50')" class="cursor-pointer bg-slate-800/80 hover:bg-slate-700 text-amber-300 border border-slate-700 px-2 py-0.5 rounded">50</span>
+          <span onclick="setCoupon('100')" class="cursor-pointer bg-slate-800/80 hover:bg-slate-700 text-amber-300 border border-slate-700 px-2 py-0.5 rounded">100</span>
+          <span onclick="setCoupon('150')" class="cursor-pointer bg-slate-800/80 hover:bg-slate-700 text-amber-300 border border-slate-700 px-2 py-0.5 rounded">150</span>
+          <span onclick="setCoupon('200')" class="cursor-pointer bg-slate-800/80 hover:bg-slate-700 text-amber-300 border border-slate-700 px-2 py-0.5 rounded">200</span>
+          <span onclick="setCoupon('400')" class="cursor-pointer bg-red-950/70 hover:bg-red-900/80 text-red-200 border border-red-700/80 px-2 py-0.5 rounded font-bold">400</span>
+        </div>
+
+        <div class="flex gap-2">
+          <input type="text" id="coupon-input" placeholder="Enter coupon code" class="bg-[#15181e] border border-slate-700/80 rounded-lg px-3 py-2 text-xs text-white uppercase focus:outline-none focus:border-red-500 flex-1 font-semibold tracking-wider">
+          <button type="button" onclick="applyCoupon()" class="bg-red-600 hover:bg-red-500 text-white text-xs font-bold px-4 py-2 rounded-lg transition">Apply</button>
+        </div>
+        <div id="coupon-message" class="text-[11px] mt-1.5 hidden font-medium"></div>
+      </div>
+
+      <div class="mt-4 space-y-2.5">
+        <!-- Google Pay UPI Buy Button -->
+        <a id="gpay-btn" href="upi://pay?pa=devnaskar838-3@oksbi&pn=The%20Maya%20AI&am=699&cu=INR&tn=Maya%20Standard%20License" 
+           class="flex items-center justify-center gap-2 w-full accent-bg text-white font-bold py-3.5 rounded-xl text-sm transition shadow-lg shadow-red-600/20">
+          <i data-lucide="zap" class="w-4 h-4"></i> <span id="gpay-text">Buy Maya Ai for Android (₹699)</span>
+        </a>
+
+        <!-- Pay & Install Button (PhonePe / Paytm / Slice / Universal UPI) -->
+        <a id="upi-btn" href="upi://pay?pa=9330703874-2@ibl&pn=The%20Maya%20AI&am=699&cu=INR&tn=Maya%20Android%20Assistant" 
+           class="flex items-center justify-center gap-2 w-full bg-[#1b2029] hover:bg-[#232936] text-slate-200 border border-slate-700/60 font-semibold py-3 rounded-xl text-xs transition">
+          <i data-lucide="download" class="w-4 h-4 text-red-500"></i> <span id="upi-text">Pay & Install — PhonePe / Paytm / Slice</span>
+        </a>
+
+        <!-- Scan QR Option -->
+        <button type="button" onclick="toggleQRCode()" class="flex items-center justify-center gap-2 w-full bg-slate-900 hover:bg-slate-800 text-amber-400 border border-slate-800 font-semibold py-2.5 rounded-xl text-xs transition">
+          <i data-lucide="qr-code" class="w-4 h-4"></i> <span id="qr-btn-text">Scan QR Code to Pay</span>
+        </button>
+      </div>
+
+      <!-- DYNAMIC QR CODE DISPLAY -->
+      <div id="qr-box" class="hidden mt-4 p-4 bg-[#0b0d10] border border-slate-800 rounded-xl text-center">
+        <p class="text-xs font-bold text-white mb-1">Scan & Pay with Any UPI App</p>
+        <div class="inline-block p-2 bg-white rounded-lg shadow-md my-2">
+          <img id="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=devnaskar838-3@oksbi%26pn=The%20Maya%20AI%26am=699%26cu=INR" alt="UPI QR Code" class="w-44 h-44">
+        </div>
+        <p id="qr-price-text" class="text-xs font-extrabold text-amber-400">Amount: ₹699</p>
+        <div class="mt-3 text-[10px] text-slate-400 space-y-0.5 text-left bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+          <div><b>GPay:</b> devnaskar838-3@oksbi</div>
+          <div><b>PhonePe:</b> 9330703874-2@ibl</div>
+          <div><b>Paytm:</b> 9330703874@ptsbi</div>
+          <div><b>Slice:</b> 9330703874@slc</div>
+        </div>
+      </div>
+
+      <p class="text-center mt-4 text-[11px] text-slate-400">
+        Free gives you <span class="text-amber-400 font-medium">10 min of voice a day</span>. The licence unlocks every tool, the PC link and unlimited talking.
+      </p>
+    </div>
+  </section>
+
+  <!-- KYA MILTA HAI COMPARISON -->
+  <section class="max-w-xl mx-auto px-4 py-6">
+    <div class="card-dark rounded-2xl p-5">
+      <h3 class="text-base font-bold text-white mb-1">Kya milta hai</h3>
+      <p class="text-xs text-slate-400 mb-4">Yeh alag-alag plan nahi hain. App ek hi hai (₹699, ek baar). Pro Max uske upar ka extra hai.</p>
+
+      <div class="grid grid-cols-3 gap-2">
+        <div class="bg-[#0f1217] border border-slate-800 rounded-xl p-3 text-center">
+          <div class="text-xs text-slate-400">Free</div>
+          <div class="text-lg font-extrabold text-white mt-1">₹0</div>
+          <div class="text-[10px] text-slate-500">muft</div>
+        </div>
+        <div class="bg-red-950/40 border border-red-500/40 rounded-xl p-3 text-center">
+          <div class="text-xs text-red-400 font-bold">Maya app</div>
+          <div id="table-app-price" class="text-lg font-extrabold text-white mt-1">₹699</div>
+          <div class="text-[10px] text-red-300">ek baar</div>
+        </div>
+        <div class="bg-[#0f1217] border border-slate-800 rounded-xl p-3 text-center">
+          <div class="text-[10px] text-amber-400 font-bold">App + Pro Max</div>
+          <div class="text-xs font-bold text-slate-200 mt-1">+ ₹99 <span class="text-[9px] text-slate-500">/mahine</span></div>
+          <div class="text-[9px] text-slate-400">ya ₹800 ek baar</div>
+        </div>
+      </div>
+
+      <!-- Feature Table Comparison Items -->
+      <div class="mt-6 space-y-4 text-xs">
+        <div>
+          <div class="font-bold text-slate-300 mb-2">Maya se baat karna</div>
+          <div class="grid grid-cols-3 gap-2 text-center text-[11px]">
+            <div class="bg-[#0f1217] py-2 rounded-lg text-slate-400">10 min roz</div>
+            <div class="bg-red-950/30 py-2 rounded-lg text-red-300 font-semibold">Jitna chaho</div>
+            <div class="bg-red-950/30 py-2 rounded-lg text-red-300 font-semibold">Jitna chaho</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-bold text-slate-300 mb-2">Phone ka kaam: WhatsApp, call, apps, research, coding</div>
+          <div class="grid grid-cols-3 gap-2 text-center text-[11px]">
+            <div class="bg-[#0f1217] py-2 rounded-lg text-slate-400">Thode demo tools</div>
+            <div class="bg-red-950/30 py-2 rounded-lg text-red-300 font-semibold">Saare tools</div>
+            <div class="bg-red-950/30 py-2 rounded-lg text-red-300 font-semibold">Saare tools</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-bold text-slate-300 mb-2">Characters</div>
+          <div class="grid grid-cols-3 gap-2 text-center text-[11px]">
+            <div class="bg-[#0f1217] py-2 rounded-lg text-slate-400">1</div>
+            <div class="bg-red-950/30 py-2 rounded-lg text-red-300 font-semibold">3</div>
+            <div class="bg-red-950/30 py-2 rounded-lg text-amber-300 font-semibold">Saare + har mahine naya</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL FEATURE CATEGORIES -->
+  <section class="max-w-2xl mx-auto px-4 py-4 space-y-8">
+    
+    <!-- 1. TALK & CONTROL -->
+    <div>
+      <div class="text-[11px] font-bold text-amber-500 uppercase tracking-widest mb-3">TALK & CONTROL</div>
+      <div class="space-y-2.5">
+        <div class="card-dark p-4 rounded-xl flex items-start gap-3">
+          <div class="p-2.5 bg-slate-800/60 rounded-xl text-amber-400"><i data-lucide="mic" class="w-4 h-4"></i></div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Real-time voice</h4>
+            <p class="text-xs text-slate-400 mt-1">Talk to it like a person, in English or Hindi. Cut in mid-sentence and it stops and listens.</p>
+          </div>
+        </div>
+
+        <div class="card-dark p-4 rounded-xl flex items-start gap-3">
+          <div class="p-2.5 bg-slate-800/60 rounded-xl text-amber-400"><i data-lucide="phone-call" class="w-4 h-4"></i></div>
+          <div>
+
+      <!-- COUPON CODE BOX (50, 100, 150, 200, 400) -->
+      <div class="mt-5 p-3.5 bg-[#0b0d10] border border-slate-800 rounded-xl">
+        <div class="flex justify-between items-center mb-1.5">
+          <label class="text-[11px] font-bold text-slate-300 flex items-center gap-1">
+            <i data-lucide="tag" class="w-3.5 h-3.5 text-red-400"></i> Have a Promo Code?
+          </label>
+        </div>
+        
+        <div class="flex flex-wrap gap-1.5 mb-2.5 text-[10px]">
+          <span onclick="setCoupon('50')" class="cursor-pointer bg-slate-800/80 hover:bg-slate-700 text-amber-300 border border-slate-700 px-2 py-0.5 rounded">50</span>
+          <span onclick="setCoupon('100')" class="cursor-pointer bg-slate-800/80 hover:bg-slate-700 text-amber-300 border border-slate-700 px-2 py-0.5 rounded">100</span>
+          <span onclick="setCoupon('150')" class="cursor-pointer bg-slate-800/80 hover:bg-slate-700 text-amber-300 border border-slate-700 px-2 py-0.5 rounded">150</span>
+          <span onclick="setCoupon('200')" class="cursor-pointer bg-slate-800/80 hover:bg-slate-700 text-amber-300 border border-slate-700 px-2 py-0.5 rounded">200</span>
+          <span onclick="setCoupon('400')" class="cursor-pointer bg-red-950/70 hover:bg-red-900/80 text-red-200 border border-red-700/80 px-2 py-0.5 rounded font-bold">400</span>
+        </div>
+
+        <div class="flex gap-2">
+          <input type="text" id="coupon-input" placeholder="Enter coupon code" class="bg-[#15181e] border border-slate-700/80 rounded-lg px-3 py-2 text-xs text-white uppercase focus:outline-none focus:border-red-500 flex-1 font-semibold tracking-wider">
+          <button type="button" onclick="applyCoupon()" class="bg-red-600 hover:bg-red-500 text-white text-xs font-bold px-4 py-2 rounded-lg transition">Apply</button>
+        </div>
+        <div id="coupon-message" class="text-[11px] mt-1.5 hidden font-medium"></div>
+      </div>
+
+      <div class="mt-4 space-y-2.5">
+        <!-- Google Pay UPI Buy Button -->
+        <a id="gpay-btn" href="upi://pay?pa=devnaskar838-3@oksbi&pn=The%20Maya%20AI&am=699&cu=INR&tn=Maya%20Standard%20License" 
+           class="flex items-center justify-center gap-2 w-full accent-bg text-white font-bold py-3.5 rounded-xl text-sm transition shadow-lg shadow-red-600/20">
+          <i data-lucide="zap" class="w-4 h-4"></i> <span id="gpay-text">Buy Maya Ai for Android (₹699)</span>
+        </a>
+
+        <!-- Pay & Install Button (PhonePe / Paytm / Slice / Universal UPI) -->
+        <a id="upi-btn" href="upi://pay?pa=9330703874-2@ibl&pn=The%20Maya%20AI&am=699&cu=INR&tn=Maya%20Android%20Assistant" 
+           class="flex items-center justify-center gap-2 w-full bg-[#1b2029] hover:bg-[#232936] text-slate-200 border border-slate-700/60 font-semibold py-3 rounded-xl text-xs transition">
+          <i data-lucide="download" class="w-4 h-4 text-red-500"></i> <span id="upi-text">Pay & Install — PhonePe / Paytm / Slice</span>
+        </a>
+
+        <!-- Scan QR Button -->
+        <button type="button" onclick="toggleQRCode()" class="flex items-center justify-center gap-2 w-full bg-slate-900 hover:bg-slate-800 text-amber-400 border border-slate-800 font-semibold py-2.5 rounded-xl text-xs transition">
+          <i data-lucide="qr-code" class="w-4 h-4"></i> <span id="qr-btn-text">Scan QR Code to Pay</span>
+        </button>
+      </div>
+
+      <!-- DYNAMIC QR CODE BOX -->
+      <div id="qr-box" class="hidden mt-4 p-4 bg-[#0b0d10] border border-slate-800 rounded-xl text-center">
+        <p class="text-xs font-bold text-white mb-1">Scan & Pay with Any UPI App</p>
+        <div class="inline-block p-2 bg-white rounded-lg shadow-md my-2">
+          <img id="qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=devnaskar838-3@oksbi%26pn=The%20Maya%20AI%26am=699%26cu=INR" alt="UPI QR Code" class="w-44 h-44">
+        </div>
+        <p id="qr-price-text" class="text-xs font-extrabold text-amber-400">Amount: ₹699</p>
+        <div class="mt-3 text-[10px] text-slate-400 space-y-0.5 text-left bg-slate-900/60 p-2.5 rounded-lg border border-slate-800">
+          <div><b>GPay:</b> devnaskar838-3@oksbi</div>
+          <div><b>PhonePe:</b> 9330703874-2@ibl</div>
+          <div><b>Paytm:</b> 9330703874@ptsbi</div>
+          <div><b>Slice:</b> 9330703874@slc</div>
+        </div>
+      </div>
+
+      <p class="text-center mt-4 text-[11px] text-slate-400">
+        Free gives you <span class="text-amber-400 font-medium">10 min of voice a day</span>. The licence unlocks every tool, the PC link and unlimited talking.
+      </p>
+    </div>
+  </section>
+
+  <!-- KYA MILTA HAI COMPARISON -->
+  <section class="max-w-xl mx-auto px-4 py-6">
+    <div class="card-dark rounded-2xl p-5">
+      <h3 class="text-base font-bold text-white mb-1">Kya milta hai</h3>
+      <p class="text-xs text-slate-400 mb-4">Yeh alag-alag plan nahi hain. App ek hi hai (₹699, ek baar). Pro Max uske upar ka extra hai.</p>
+
+      <div class="grid grid-cols-3 gap-2">
+        <div class="bg-[#0f1217] border border-slate-800 rounded-xl p-3 text-center">
+          <div class="text-xs text-slate-400">Free</div>
+          <div class="text-lg font-extrabold text-white mt-1">₹0</div>
+          <div class="text-[10px] text-slate-500">muft</div>
+        </div>
+        <div class="bg-red-950/40 border border-red-500/40 rounded-xl p-3 text-center">
+          <div class="text-xs text-red-400 font-bold">Maya app</div>
+          <div id="table-app-price" class="text-lg font-extrabold text-white mt-1">₹699</div>
+          <div class="text-[10px] text-red-300">ek baar</div>
+        </div>
+        <div class="bg-[#0f1217] border border-slate-800 rounded-xl p-3 text-center">
+          <div class="text-[10px] text-amber-400 font-bold">App + Pro Max</div>
+          <div class="text-xs font-bold text-slate-200 mt-1">+ ₹99 <span class="text-[9px] text-slate-500">/mahine</span></div>
+          <div class="text-[9px] text-slate-400">ya ₹800 ek baar</div>
+        </div>
+      </div>
+
+      <!-- Feature Table Comparison Items -->
+      <div class="mt-6 space-y-4 text-xs">
+        <div>
+          <div class="font-bold text-slate-300 mb-2">Maya se baat karna</div>
+          <div class="grid grid-cols-3 gap-2 text-center text-[11px]">
+            <div class="bg-[#0f1217] py-2 rounded-lg text-slate-400">10 min roz</div>
+            <div class="bg-red-950/30 py-2 rounded-lg text-red-300 font-semibold">Jitna chaho</div>
+            <div class="bg-red-950/30 py-2 rounded-lg text-red-300 font-semibold">Jitna chaho</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-bold text-slate-300 mb-2">Phone ka kaam: WhatsApp, call, apps, research, coding</div>
+          <div class="grid grid-cols-3 gap-2 text-center text-[11px]">
+            <div class="bg-[#0f1217] py-2 rounded-lg text-slate-400">Thode demo tools</div>
+            <div class="bg-red-950/30 py-2 rounded-lg text-red-300 font-semibold">Saare tools</div>
+            <div class="bg-red-950/30 py-2 rounded-lg text-red-300 font-semibold">Saare tools</div>
+          </div>
+        </div>
+
+        <div>
+          <div class="font-bold text-slate-300 mb-2">Characters</div>
+          <div class="grid grid-cols-3 gap-2 text-center text-[11px]">
+            <div class="bg-[#0f1217] py-2 rounded-lg text-slate-400">1</div>
+            <div class="bg-red-950/30 py-2 rounded-lg text-red-300 font-semibold">3</div>
+            <div class="bg-red-950/30 py-2 rounded-lg text-amber-300 font-semibold">Saare + har mahine naya</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL FEATURE CATEGORIES -->
+  <section class="max-w-2xl mx-auto px-4 py-4 space-y-8">
+    
+    <!-- 1. TALK & CONTROL -->
+    <div>
+      <div class="text-[11px] font-bold text-amber-500 uppercase tracking-widest mb-3">TALK & CONTROL</div>
+      <div class="space-y-2.5">
+        <div class="card-dark p-4 rounded-xl flex items-start gap-3">
+          <div class="p-2.5 bg-slate-800/60 rounded-xl text-amber-400"><i data-lucide="mic" class="w-4 h-4"></i></div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Real-time voice</h4>
+            <p class="text-xs text-slate-400 mt-1">Talk to it like a person, in English or Hindi. Cut in mid-sentence and it stops and listens.</p>
+          </div>
+        </div>
+
+        <div class="card-dark p-4 rounded-xl flex items-start gap-3">
+          <div class="p-2.5 bg-slate-800/60 rounded-xl text-amber-400"><i data-lucide="phone-call" class="w-4 h-4"></i></div>
+          <div>
+            <h4 class="text-sm font-bold text-white">Calls, answered by voice</h4>
+            <p class="text-xs text-slate-400 mt-1">Announces who is calling by name. Say "pick up" or "reject" without touching the phone.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ANDROID CAPABILITIES SUITES (150+ Actions) -->
+    <div class="pt-2">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+        <div class="card-dark p-3.5 rounded-xl">
+          <div class="flex items-center gap-2 text-amber-400 mb-1"><i data-lucide="smartphone" class="w-4 h-4"></i> <span class="text-xs font-bold text-white">Phone control</span></div>
+          <p class="text-[11px] text-slate-400">Opens apps and taps, types, swipes and scrolls for you.</p>
+          <span class="text-[10px] text-amber-400 font-semibold mt-1 block">"Open Instagram and scroll reels"</span>
+        </div>
+
+        <div class="card-dark p-3.5 rounded-xl">
+          <div class="flex items-center gap-2 text-amber-400 mb-1"><i data-lucide="clock" class="w-4 h-4"></i> <span class="text-xs font-bold text-white">Alarms & reminders</span></div>
+          <p class="text-[11px] text-slate-400">Alarms, timers, calendar events and spoken reminders.</p>
+          <span class="text-[10px] text-amber-400 font-semibold mt-1 block">"Set an alarm for 7 AM"</span>
+        </div>
+
+        <div class="card-dark p-3.5 rounded-xl">
+          <div class="flex items-center gap-2 text-amber-400 mb-1"><i data-lucide="bell" class="w-4 h-4"></i> <span class="text-xs font-bold text-white">Notifications</span></div>
+          <p class="text-[11px] text-slate-400">Reads notifications from all your apps out loud.</p>
+          <span class="text-[10px] text-amber-400 font-semibold mt-1 block">"Read my notifications"</span>
+        </div>
+
+        <div class="card-dark p-3.5 rounded-xl">
+          <div class="flex items-center gap-2 text-amber-400 mb-1"><i data-lucide="files" class="w-4 h-4"></i> <span class="text-xs font-bold text-white">Files & docs</span></div>
+          <p class="text-[11px] text-slate-400">Creates Word, Excel, PPT and PDF files; finds and shares files.</p>
+          <span class="text-[10px] text-amber-400 font-semibold mt-1 block">"Make a resume in Word"</span>
+        </div>
+
+        <div class="card-dark p-3.5 rounded-xl">
+          <div class="flex items-center gap-2 text-amber-400 mb-1"><i data-lucide="code" class="w-4 h-4"></i> <span class="text-xs font-bold text-white">Coding & websites</span></div>
+          <p class="text-[11px] text-slate-400">Builds full websites by voice, pushes to GitHub, deploys to Vercel.</p>
+          <span class="text-[10px] text-amber-400 font-semibold mt-1 block">"Build a website for my cafe"</span>
+        </div>
+
+        <div class="card-dark p-3.5 rounded-xl">
+          <div class="flex items-center gap-2 text-amber-400 mb-1"><i data-lucide="globe" class="w-4 h-4"></i> <span class="text-xs font-bold text-white">Knowledge & live info</span></div>
+          <p class="text-[11px] text-slate-400">Web answers, weather, sports scores, stock prices and YouTube stats.</p>
+          <span class="text-[10px] text-amber-400 font-semibold mt-1 block">"What's today's news?"</span>
+        </div>
+      </div>
+    </div>
+
+
+ <div class="card-dark p-3.5 rounded-xl">
+          <div class="flex items-center gap-2 text-amber-400 mb-1"><i data-lucide="map-pin" class="w-4 h-4"></i> <span class="text-xs font-bold text-white">Location & maps</span></div>
+          <p class="text-[11px] text-slate-400">Navigation, nearby places and any address on the map.</p>
+          <span class="text-[10px] text-amber-400 font-semibold mt-1 block">"Navigate to the airport"</span>
+        </div>
+
+        <div class="card-dark p-3.5 rounded-xl">
+          <div class="flex items-center gap-2 text-amber-400 mb-1"><i data-lucide="lightbulb" class="w-4 h-4"></i> <span class="text-xs font-bold text-white">Smart home</span></div>
+          <p class="text-[11px] text-slate-400">Switch lights, fans and plugs with a sentence.</p>
+          <span class="text-[10px] text-amber-400 font-semibold mt-1 block">"Turn off the bedroom light"</span>
+        </div>
+
+        <div class="card-dark p-3.5 rounded-xl">
+          <div class="flex items-center gap-2 text-amber-400 mb-1"><i data-lucide="book-open" class="w-4 h-4"></i> <span class="text-xs font-bold text-white">Study mode</span></div>
+          <p class="text-[11px] text-slate-400">A full-screen whiteboard where Maya Ai teaches like a tutor.</p>
+          <span class="text-[10px] text-amber-400 font-semibold mt-1 block">"Explain Pythagoras on the board"</span>
+        </div>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- BOTTOM PAY & INSTALL BUTTON -->
+  <div class="max-w-md mx-auto px-4 py-8 text-center">
+    <a href="#pricing" class="flex items-center justify-center gap-2 w-full accent-bg text-white font-extrabold py-3.5 rounded-2xl text-sm transition shadow-lg shadow-red-600/30">
+      Pay & Install — Android Assistant <i data-lucide="arrow-right" class="w-4 h-4"></i>
+    </a>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-slate-900 bg-[#07090c] pt-10 pb-8 text-xs text-slate-500">
+    <div class="max-w-3xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+        <div>
+          <div class="flex items-center gap-2 mb-2">
+            <div class="w-6 h-6 rounded-lg bg-gradient-to-tr from-amber-500 to-red-600 flex items-center justify-center text-white font-extrabold text-xs">M</div>
+            <span class="text-sm font-bold text-white">The <span class="text-red-500">Maya Ai</span></span>
+          </div>
+          <p class="text-slate-400 leading-relaxed text-[11px]">
+            An autonomous AI voice assistant that learns, remembers, and acts on your computer and phone. Built in India.
+          </p>
+
+          <div class="mt-4 p-3 bg-slate-900/40 border border-slate-800 rounded-xl space-y-1 text-[11px] text-slate-400">
+            <div>📍 Rahul Kumar — 23rd Floor, Asiadapur, Gauriganj, Uttar Pradesh 227409, India</div>
+            <div>📧 support@getmaya.online • 📞 +91 9330703874</div>
+          </div>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4 text-[11px]">
+          <div>
+            <h5 class="text-xs font-bold text-white mb-2">PRODUCT</h5>
+            <ul class="space-y-1.5 text-slate-400">
+              <li>Maya Ai for Windows</li>
+              <li>Maya Ai for Android</li>
+              <li>Maya Sites</li>
+              <li>Maya Ai Home Box</li>
+              <li>Pricing</li>
+            </ul>
+          </div>
+          <div>
+            <h5 class="text-xs font-bold text-white mb-2">LEGAL</h5>
+            <ul class="space-y-1.5 text-slate-400">
+              <li>Terms & conditions</li>
+              <li>Privacy policy</li>
+              <li>Cancellation & refund</li>
+              <li>Shipping & delivery</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="border-t border-slate-900 pt-6 flex flex-col sm:flex-row justify-between items-center gap-3 text-center text-[10px]">
+        <p>Accepted: Google Pay • PhonePe • Paytm • Slice UPI</p>
+        <p class="text-amber-500 font-bold">🪔 Shubh Navratri & Dussehra 🪔</p>
+        <p>© 2026 The Maya Ai. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT: COUPON CODE (50, 100, 150, 200, 400) & DYNAMIC QR LOGIC -->
+  <script>
+    lucide.createIcons();
+
+    let currentPrice = 699;
+
+    function setCoupon(code) {
+      const input = document.getElementById('coupon-input');
+      if (input) {
+        input.value = code;
+        applyCoupon();
+      }
+    }
+
+    function applyCoupon() {
+      const inputEl = document.getElementById('coupon-input');
+      if (!inputEl) return;
+
+      const rawInput = inputEl.value.trim().toUpperCase();
+      const msg = document.getElementById('coupon-message');
+      const priceDisplay = document.getElementById('price-display');
+      const strikePrice = document.getElementById('strike-price');
+      const savingsBadge = document.getElementById('savings-badge');
+      const tableAppPrice = document.getElementById('table-app-price');
+      const gpayBtn = document.getElementById('gpay-btn');
+      const gpayText = document.getElementById('gpay-text');
+      const upiBtn = document.getElementById('upi-btn');
+      const upiText = document.getElementById('upi-text');
+
+      const couponMap = {
+        '50': 50, 'MAYA50': 50,
+        '100': 100, 'MAYA100': 100,
+        '150': 150, 'MAYA150': 150,
+        '200': 200, 'MAYA200': 200,
+        '400': 400, 'MAYA400': 400
+      };
+
+      if (couponMap[rawInput]) {
+        const discount = couponMap[rawInput];
+        currentPrice = 699 - discount;
+
+        if (priceDisplay) priceDisplay.innerText = '₹' + currentPrice;
+        if (strikePrice) strikePrice.innerText = '₹699';
+        if (savingsBadge) {
+          savingsBadge.innerText = `₹${discount} Saved!`;
+          savingsBadge.classList.remove('hidden');
+        }
+        if (tableAppPrice) tableAppPrice.innerText = '₹' + currentPrice;
+
+        // UPI Deep Links Update (GPay and Universal PhonePe/Paytm/Slice)
+        if (gpayBtn) {
+          gpayBtn.href = `upi://pay?pa=devnaskar838-3@oksbi&pn=The%20Maya%20AI&am=${currentPrice}&cu=INR&tn=Maya%20Discounted%20License`;
+        }
+        if (gpayText) gpayText.innerText = `Buy Maya Ai for Android (₹${currentPrice})`;
+
+        if (upiBtn) {
+          upiBtn.href = `upi://pay?pa=9330703874-2@ibl&pn=The%20Maya%20AI&am=${currentPrice}&cu=INR&tn=Maya%20Discounted%20Assistant`;
+        }
+        if (upiText) upiText.innerText = `Pay & Install (₹${currentPrice}) — PhonePe / Paytm / Slice`;
+
+        // Update Dynamic QR Code with discounted amount
+        updateQRCode(currentPrice);
+
+        if (msg) {
+          msg.className = 'text-[11px] mt-1.5 font-medium text-emerald-400 block';
+          msg.innerText = `✓ Coupon "${rawInput}" applied! ₹${discount} discount added. Pay ₹${currentPrice} only.`;
+        }
+      } else if (rawInput === '') {
+        if (msg) {
+          msg.className = 'text-[11px] mt-1.5 font-medium text-amber-400 block';
+          msg.innerText = 'Please enter a coupon code (50, 100, 150, 200, or 400).';
+        }
+      } else {
+        if (msg) {
+          msg.className = 'text-[11px] mt-1.5 font-medium text-red-400 block';
+          msg.innerText = '✕ Invalid coupon. Try 50, 100, 150, 200, or 400.';
+        }
+      }
+    }
+
+    function toggleQRCode() {
+      const qrBox = document.getElementById('qr-box');
+      const qrBtnText = document.getElementById('qr-btn-text');
+      if (!qrBox) return;
+
+      if (qrBox.classList.contains('hidden')) {
+        qrBox.classList.remove('hidden');
+        if (qrBtnText) qrBtnText.innerText = 'Hide QR Code';
+        updateQRCode(currentPrice);
+      } else {
+        qrBox.classList.add('hidden');
+        if (qrBtnText) qrBtnText.innerText = 'Scan QR Code to Pay';
+      }
+    }
+
+    function updateQRCode(amount) {
+      const qrImg = document.getElementById('qr-img');
+      const qrPriceText = document.getElementById('qr-price-text');
+      if (qrImg && qrPriceText) {
+        qrImg.src = `https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=upi://pay?pa=devnaskar838-3@oksbi%26pn=The%20Maya%20AI%26am=${amount}%26cu=INR`;
+        qrPriceText.innerText = `Amount: ₹${amount}`;
+      }
+    }
+  </script>
+</body>
+</html>
+
